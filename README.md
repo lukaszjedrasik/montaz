@@ -29,8 +29,6 @@ npm run preview
     osobę). Dodaj albo usuń wpisy — grid dostosuje się sam.
   - `kontakt@twojadomena.pl` (dwa miejsca) → Twój prawdziwy e-mail
   - `https://youtube.com/@twoj-kanal` → link do Twojego kanału YT
-  - `https://linkedin.com/in/twoj-profil` → Twój LinkedIn (albo usuń, jeśli
-    nieaktualny)
   - `[uzupełnij datę]` w sekcji certyfikatu → data ukończenia kursu
   - zdjęcie certyfikatu → wrzuć swój plik (np. `certyfikat.jpg`) do `public/`
     i podmień `src="/certyfikat-placeholder.svg"` na `src="/certyfikat.jpg"`
