@@ -56,7 +56,7 @@ const people = [
     <section id="hero" class="section hero">
       <div class="container">
         <p class="mono hero-timecode">00:00:00:00</p>
-        <h1 class="hero-headline">
+        <h1 class="hero-headline gradient-text">
           Wstaw swój<br />główny nagłówek.
         </h1>
         <p class="hero-sub">
@@ -74,7 +74,7 @@ const people = [
     <section id="o-mnie" class="section">
       <div class="container">
         <SectionDivider timecode="00:00:14:00" label="O mnie" />
-        <h2 class="section-title">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
         <div class="prose">
           <p>Wstaw akapit o swoim backgroundzie i doświadczeniu.</p>
           <p>Wstaw akapit o tym, co Cię wyróżnia jako montażystę.</p>
@@ -86,7 +86,7 @@ const people = [
     <section id="certyfikat" class="section">
       <div class="container">
         <SectionDivider timecode="00:00:38:00" label="Kursy" />
-        <h2 class="section-title">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
         <div class="cert-card">
           <img
             src="/certyfikat-placeholder.svg"
@@ -112,7 +112,7 @@ const people = [
     <section id="praca" class="section">
       <div class="container">
         <SectionDivider timecode="00:01:02:00" label="Realizacje" />
-        <h2 class="section-title">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
         <div class="prose">
           <p>Wstaw krótki opis tej sekcji.</p>
         </div>
@@ -140,7 +140,7 @@ const people = [
     <section id="wspolpraca" class="section">
       <div class="container">
         <SectionDivider timecode="00:01:18:00" label="Współprace" />
-        <h2 class="section-title">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
         <div class="prose">
           <p>Wstaw krótki opis tej sekcji.</p>
         </div>
@@ -184,7 +184,7 @@ const people = [
           spodziewać.
         </p>
         <div class="hero-actions">
-          <a href="mailto:kontakt@twojadomena.pl" class="btn btn-primary"
+          <a href="mailto:kontakt@twojadomena.pl" class="btn btn-primary gradient-text"
             >Napisz do mnie</a
           >
         </div>
@@ -289,7 +289,6 @@ const people = [
   .cert-card {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-left: 3px solid transparent;
     border-image: var(--gradient) 1;
     padding: clamp(1.5rem, 4vw, 2.5rem);
     display: flex;
