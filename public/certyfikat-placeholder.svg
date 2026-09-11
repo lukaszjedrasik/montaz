@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <rect width="400" height="280" fill="#f0ece2" />
+  <rect x="1" y="1" width="398" height="278" fill="none" stroke="#e2dcce" stroke-width="2" />
+  <text x="200" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#9c9384">zdjęcie certyfikatu</text>
+</svg>

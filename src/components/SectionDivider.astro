@@ -1,0 +1,59 @@
+---
+interface Props {
+  timecode: string;
+  label: string;
+}
+const { timecode, label } = Astro.props;
+---
+
+<div class="divider">
+  <span class="playhead" aria-hidden="true"></span>
+  <span class="timecode mono">{timecode}</span>
+  <span class="rule"></span>
+  <span class="label">{label}</span>
+</div>
+
+<style>
+  .divider {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .playhead {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gradient);
+    flex-shrink: 0;
+  }
+
+  .timecode {
+    font-size: var(--text-xs);
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--line);
+  }
+
+  .label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 30rem) {
+    .divider {
+      grid-template-columns: auto auto 1fr;
+    }
+    .label {
+      display: none;
+    }
+  }
+</style>
