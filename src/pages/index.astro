@@ -4,10 +4,13 @@ import SectionDivider from '../components/SectionDivider.astro';
 
 // Podmień id (fragment z youtube.com/watch?v=TEN_FRAGMENT) i title na własne.
 const videos = [
-  { id: 'dQw4w9WgXcQ', title: 'Wstaw tytuł filmu 1' },
-  { id: 'dQw4w9WgXcQ', title: 'Wstaw tytuł filmu 2' },
-  { id: 'dQw4w9WgXcQ', title: 'Wstaw tytuł filmu 3' },
-  { id: 'dQw4w9WgXcQ', title: 'Wstaw tytuł filmu 4' },
+  { id: '7ioxndcRB9c', title: 'Radek Haberko - zgadnij dziewczyne' },
+  { id: 'apyzux0NUds', title: 'Radek Haberko - lepsza niż tata' },
+  { id: 'JR9UqcWzA1M', title: 'Akademia Piękna - jaki zabieg na jaki problem' },
+  { id: 'V6US74MIAKM', title: 'Crators Weekend - event' },
+  { id: 'YeDepd26IGQ', title: 'Wstaw tytuł filmu 4' },
+  { id: '1SjGz7fn7OU', title: 'Wstaw tytuł filmu 4' },
+  { id: 'CsQ24Mc_ipM', title: 'Wstaw tytuł filmu 4' },
 ];
 
 // Osoby, z którymi współpracowałeś — podmień dane i linki social media.
@@ -46,7 +49,7 @@ const people = [
       <nav>
         <a href="#o-mnie">O mnie</a>
         <a href="#praca">Realizacje</a>
-        <a href="#wspolpraca">Współprace</a>
+        <!--<a href="#wspolpraca">Współprace</a>-->
         <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
@@ -57,14 +60,13 @@ const people = [
       <div class="container">
         <p class="mono hero-timecode">00:00:00:00</p>
         <h1 class="hero-headline gradient-text">
-          Wstaw swój<br />główny nagłówek.
+          Twoje treści zasługują na coś więcej.
         </h1>
         <p class="hero-sub">
-          Wstaw krótki opis tego, kim jesteś i czym się zajmujesz —
-          dwa-trzy zdania wystarczą.
+          Zajmuję się montażem wideo — od cięcia po finalny szlif. Zależy mi, żeby to co robię, było oglądane od początku do końca.
         </p>
         <div class="hero-actions">
-          <a href="mailto:kontakt@twojadomena.pl" class="btn btn-primary"
+          <a href="mailto:gulasz.yt@gmail.com" class="btn btn-primary"
             >Napisz do mnie</a
           >
         </div>
@@ -74,11 +76,18 @@ const people = [
     <section id="o-mnie" class="section">
       <div class="container">
         <SectionDivider timecode="00:00:14:00" label="O mnie" />
-        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">Cześć, jestem Łukasz.</h2>
         <div class="prose">
-          <p>Wstaw akapit o swoim backgroundzie i doświadczeniu.</p>
-          <p>Wstaw akapit o tym, co Cię wyróżnia jako montażystę.</p>
-          <p>Wstaw akapit zamykający — dlaczego warto z Tobą pracować.</p>
+          <p>Zanim zacząłem montować, byłem fotograłem, a później robiłem front-end.
+            Brzmi jak przypadkowa ścieżka, ale każdy etap uczył mnie tego samego — jak zbudować obraz,
+            który przyciąga uwagę.</p>
+          <ul>A oto z czym pracuję dziś:
+            <li>Montaż w <b>Adobe Premiere</b> — od cięcia po finalny render</li>
+            <li>Animacje i efekty w <b>After Effects</b></li>
+            <li><b>Sound design</b> — muzyka, wyrównanie audio, efekty dźwiękowe</li>
+            <li><b>Motion design</b> pod social media</li>
+            <li>Postprodukcja filmów pod <b>TikTok</b>, <b>Instagram</b>, <b>YouTube</b> — każdy format</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -86,10 +95,10 @@ const people = [
     <section id="certyfikat" class="section">
       <div class="container">
         <SectionDivider timecode="00:00:38:00" label="Kursy" />
-        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">Kursy.</h2>
         <div class="cert-card">
           <img
-            src="/certyfikat-placeholder.svg"
+            src="/certyfikat.png"
             alt="Certyfikat ukończenia kursu montażu"
             class="cert-image"
             loading="lazy"
@@ -97,12 +106,13 @@ const people = [
           <div class="cert-content">
             <div>
               <p class="cert-course mono">Kurs Montażu</p>
-              <p class="cert-author">Dawid Kowolik — kursmontazu.pl</p>
-              <p class="cert-status">Wstaw status ukończenia kursu.</p>
-            </div>
-            <div class="cert-meta mono">
-              <span>UKOŃCZONO</span>
-              <span class="cert-date">[uzupełnij datę]</span>
+              <a
+                  href="https://kursmontazu.pl/"
+                  target="_blank"
+                  class="cert-author"
+              >
+                Dawid Kowolik — kursmontazu.pl
+              </a>
             </div>
           </div>
         </div>
@@ -112,9 +122,9 @@ const people = [
     <section id="praca" class="section">
       <div class="container">
         <SectionDivider timecode="00:01:02:00" label="Realizacje" />
-        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">To, co udało się zrobić.</h2>
         <div class="prose">
-          <p>Wstaw krótki opis tej sekcji.</p>
+          <p>Każdy z tych filmów to inny problem do rozwiązania — inne tempo, inna publiczność, inny cel.</p>
         </div>
         <div class="video-grid">
           {
@@ -137,54 +147,53 @@ const people = [
       </div>
     </section>
 
-    <section id="wspolpraca" class="section">
-      <div class="container">
-        <SectionDivider timecode="00:01:18:00" label="Współprace" />
-        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
-        <div class="prose">
-          <p>Wstaw krótki opis tej sekcji.</p>
-        </div>
-        <div class="people-grid">
-          {
-            people.map((person) => (
-              <div class="person-card">
-                <div class="person-avatar">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="8.5" r="3.5" stroke="#9c9384" stroke-width="1.3" />
-                    <path
-                      d="M4.5 20c1.2-3.8 4.3-6 7.5-6s6.3 2.2 7.5 6"
-                      stroke="#9c9384"
-                      stroke-width="1.3"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </div>
-                <p class="person-name">{person.name}</p>
-                <p class="person-role mono">{person.role}</p>
-                <div class="person-links">
-                  {person.links.map((link) => (
-                    <a href={link.url} target="_blank" rel="noopener noreferrer">
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
+    <!--<section id="wspolpraca" class="section">-->
+    <!--  <div class="container">-->
+    <!--    <SectionDivider timecode="00:01:18:00" label="Współprace" />-->
+    <!--    <h2 class="section-title gradient-text">Z kim już pracowałem.</h2>-->
+    <!--    <div class="prose">-->
+    <!--      <p>Projekty, marki, twórcy — z którymi miałem okazję popracować.</p>-->
+    <!--    </div>-->
+    <!--    <div class="people-grid">-->
+    <!--      {-->
+    <!--        people.map((person) => (-->
+    <!--          <div class="person-card">-->
+    <!--            <div class="person-avatar">-->
+    <!--              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">-->
+    <!--                <circle cx="12" cy="8.5" r="3.5" stroke="#9c9384" stroke-width="1.3" />-->
+    <!--                <path-->
+    <!--                  d="M4.5 20c1.2-3.8 4.3-6 7.5-6s6.3 2.2 7.5 6"-->
+    <!--                  stroke="#9c9384"-->
+    <!--                  stroke-width="1.3"-->
+    <!--                  stroke-linecap="round"-->
+    <!--                />-->
+    <!--              </svg>-->
+    <!--            </div>-->
+    <!--            <p class="person-name">{person.name}</p>-->
+    <!--            <p class="person-role mono">{person.role}</p>-->
+    <!--            <div class="person-links">-->
+    <!--              {person.links.map((link) => (-->
+    <!--                <a href={link.url} target="_blank" rel="noopener noreferrer">-->
+    <!--                  {link.label}-->
+    <!--                </a>-->
+    <!--              ))}-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        ))-->
+    <!--      }-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</section>-->
 
-    <section id="kontakt" class="section kontakt-section">
+    <section id="kontakt" class="section">
       <div class="container">
         <SectionDivider timecode="00:01:34:00" label="Kontakt" />
-        <h2 class="section-title gradient-text">Wstaw nagłówek sekcji.</h2>
+        <h2 class="section-title gradient-text">Pogadajmy o tym co możemy razem stworzyć.</h2>
         <p class="prose kontakt-sub">
-          Wstaw krótki opis, jak się z Tobą skontaktować i czego się
-          spodziewać.
+          Wrzuć parę słów o projekcie — długość, deadline, dla kogo to jest — i wracam z odpowiedzią w 24h.
         </p>
         <div class="hero-actions">
-          <a href="mailto:kontakt@twojadomena.pl" class="btn btn-primary gradient-text"
+          <a href="mailto:gulasz.yt@gmail.com" class="btn btn-primary gradient-text"
             >Napisz do mnie</a
           >
         </div>
@@ -240,7 +249,7 @@ const people = [
   }
 
   .hero {
-    padding-top: clamp(3rem, 8vw, 6rem);
+    padding-top: clamp(3rem, 8vw, 3rem);
   }
 
   .hero-timecode {
@@ -270,7 +279,7 @@ const people = [
 
   .section-title {
     font-size: var(--text-2xl);
-    max-width: 16ch;
+    max-width: 100%;
     margin-bottom: 2rem;
   }
 
@@ -295,12 +304,11 @@ const people = [
     flex-wrap: wrap;
     align-items: center;
     gap: 1.5rem;
-    max-width: 40rem;
   }
 
   .cert-image {
-    width: 140px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     flex-shrink: 0;
     border: 1px solid var(--line);
@@ -324,6 +332,7 @@ const people = [
   .cert-author {
     color: var(--ink-soft);
     margin-bottom: 0.6rem;
+    text-decoration: none;
   }
 
   .cert-status {
@@ -339,10 +348,6 @@ const people = [
     font-size: var(--text-xs);
     color: var(--ink-faint);
     flex-shrink: 0;
-  }
-
-  .cert-date {
-    color: var(--ink-soft);
   }
 
   .video-grid {
@@ -433,10 +438,6 @@ const people = [
     color: var(--ink);
   }
 
-  .kontakt-section {
-    border-top: 1px solid var(--line);
-  }
-
   .kontakt-sub {
     margin-top: -0.75rem;
     margin-bottom: 2rem;
@@ -468,7 +469,7 @@ const people = [
     }
     .cert-image {
       width: 100%;
-      height: 160px;
+      height: 100%;
     }
     .cert-meta {
       align-items: flex-start;
