@@ -34,7 +34,6 @@
 
   /* ---- Odstępy / layout ---- */
   --content-width: 72rem;
-  --measure: 62ch;
   --space-section: clamp(4rem, 10vw, 8rem);
 }
 
@@ -76,7 +75,6 @@ h1, h2, h3 {
 
 p {
   margin: 0;
-  max-width: var(--measure);
 }
 
 a {

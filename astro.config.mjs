@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://twoja-domena.pl',
+  site: 'https://lukaszyot.netlify.app/',
   output: 'static',
 });

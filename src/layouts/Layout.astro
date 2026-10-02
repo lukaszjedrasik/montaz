@@ -4,18 +4,27 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  lang?: 'pl' | 'en';
 }
-const { title, description } = Astro.props;
+const { title, description, lang = 'pl' } = Astro.props;
+
+const site = Astro.site ?? new URL(Astro.url.origin);
+const plUrl = new URL('/', site).href;
+const enUrl = new URL('/en/', site).href;
 ---
 
 <!doctype html>
-<html lang="pl">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={lang === 'pl' ? plUrl : enUrl} />
+    <link rel="alternate" hreflang="pl" href={plUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={plUrl} />
   </head>
   <body>
     <slot />
