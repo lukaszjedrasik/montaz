@@ -21,6 +21,22 @@ const enUrl = new URL('/en/', site).href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (e) {}
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+        var apply = function () {
+          root.dataset.theme = stored === 'light' || stored === 'dark' ? stored : mq.matches ? 'dark' : 'light';
+        };
+        apply();
+        mq.addEventListener('change', function () {
+          try { stored = localStorage.getItem('theme'); } catch (e) { stored = null; }
+          if (!stored) apply();
+        });
+      })();
+    </script>
     <link rel="canonical" href={lang === 'pl' ? plUrl : enUrl} />
     <link rel="alternate" hreflang="pl" href={plUrl} />
     <link rel="alternate" hreflang="en" href={enUrl} />
