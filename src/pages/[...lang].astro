@@ -13,7 +13,6 @@ export function getStaticPaths() {
 const { lang } = Astro.props as { lang: Lang };
 const t = ui[lang];
 
-// format: 'v' = 9:16, 'h' = 16:9
 type Video = { id: string; title: string; client: string; format: 'v' | 'h' };
 
 const videos: Video[] = [
@@ -21,14 +20,14 @@ const videos: Video[] = [
   { id: '1UKcqoH_DqU', title: 'The Da Silva Team - Chester Team Story part 1', client: 'The Da Silva Team', format: 'v' },
   { id: 'zB0XG7CAqos', title: 'The Da Silva Team - Chester Team Story part 2', client: 'The Da Silva Team', format: 'v' },
   { id: '6da5Cz3H4J0', title: 'The Da Silva Team - Merch Jacket Left In Office', client: 'The Da Silva Team', format: 'v' },
-  { id: 'CMjYVNfzfXY', title: 'How to memorize the script?', client: 'Inne', format: 'v' },
+  { id: 'CMjYVNfzfXY', title: 'How to memorize the script?', client: 'Inne', format: 'h' },
   { id: '7ioxndcRB9c', title: 'Radek Haberko - zgadnij dziewczyne', client: 'Radek Haberko', format: 'v' },
   { id: 'apyzux0NUds', title: 'Radek Haberko - lepsza niż tata', client: 'Radek Haberko', format: 'v' },
   { id: 'JR9UqcWzA1M', title: 'Akademia Piękna - jaki zabieg na jaki problem', client: 'Akademia Piękna', format: 'v' },
   { id: 'ZKAaKkM8Pw0', title: 'Akademia Piękna - 3 kwasy', client: 'Akademia Piękna', format: 'v' },
   { id: 'YeDepd26IGQ', title: 'Akademia Piękna - unboxing Clarena', client: 'Akademia Piękna', format: 'v' },
-  { id: 'V6US74MIAKM', title: 'Creators Weekend - event', client: 'Creators Weekend', format: 'v' },
-  { id: '1SjGz7fn7OU', title: 'Konopksyy - Khaby Lame', client: 'Konopksyy', format: 'h' },
+  { id: 'V6US74MIAKM', title: 'Creators Weekend - event', client: 'Creators Weekend', format: 'h' },
+  { id: '1SjGz7fn7OU', title: 'Konopksyy - Khaby Lame', client: 'Konopksyy', format: 'v' },
   { id: 'CsQ24Mc_ipM', title: 'Przemek Pro - Vlog Prawdy', client: 'Przemek Pro', format: 'h' },
 ];
 
@@ -168,7 +167,7 @@ const INITIAL_VISIBLE = 6;
 
         <dialog class="video-dialog" data-dialog aria-label="Video">
           <button type="button" class="dialog-close mono" data-close aria-label={t.work.close}>✕</button>
-          <div class="dialog-frame" data-frame></div>
+          <div class="dialog-frame" data-frame tabindex="-1" autofocus></div>
         </dialog>
       </div>
     </section>
@@ -579,7 +578,7 @@ const INITIAL_VISIBLE = 6;
   }
 
   .dialog-frame {
-    --h: min(82vh, 760px);
+    --h: min(80vh, 760px);
     height: var(--h);
     max-width: 94vw;
     background: #000;
@@ -601,7 +600,7 @@ const INITIAL_VISIBLE = 6;
     max-height: var(--h);
   }
 
-  .dialog-frame iframe {
+  .dialog-frame :global(iframe) {
     width: 100%;
     height: 100%;
     border: 0;
@@ -610,14 +609,36 @@ const INITIAL_VISIBLE = 6;
 
   .dialog-close {
     position: absolute;
-    right: 0;
-    top: -2.5rem;
-    background: none;
+    right: 0.6rem;
+    top: 0.6rem;
+    z-index: 2;
+    width: 2.2rem;
+    height: 2.2rem;
     border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     font-size: var(--text-sm);
     cursor: pointer;
-    padding: 0.4rem 0.2rem;
+  }
+
+  .dialog-frame {
+    outline: none;
+  }
+
+  [data-more][hidden] {
+    display: none !important;
+  }
+
+  .chip:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    border-style: dashed;
+  }
+
+  .chip:disabled:hover {
+    border-color: var(--line);
+    color: var(--ink-soft);
   }
 
   .people-grid {
@@ -784,10 +805,19 @@ const INITIAL_VISIBLE = 6;
     let client = '';
     let limit = initial;
 
+    const chips = [...filters.querySelectorAll<HTMLButtonElement>('.chip')];
+    const fits = (c: HTMLElement, f: string, cl: string) =>
+      (!f || c.dataset.format === f) && (!cl || c.dataset.client === cl);
+
     const render = () => {
-      const matching = cards.filter(
-        (c) => (!format || c.dataset.format === format) && (!client || c.dataset.client === client)
-      );
+      const matching = cards.filter((c) => fits(c, format, client));
+      chips.forEach((chip) => {
+        const isFormat = 'format' in chip.dataset;
+        const n = cards.filter((c) =>
+          isFormat ? fits(c, chip.dataset.format ?? '', client) : fits(c, format, chip.dataset.client ?? '')
+        ).length;
+        chip.disabled = n === 0;
+      });
       cards.forEach((c) => (c.hidden = true));
       matching.slice(0, limit).forEach((c) => (c.hidden = false));
       moreBtn.hidden = matching.length <= limit;
