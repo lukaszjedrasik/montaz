@@ -13,8 +13,7 @@ export function getStaticPaths() {
 const { lang } = Astro.props as { lang: Lang };
 const t = ui[lang];
 
-// format: 'v' = pionowy 9:16, 'h' = poziomy 16:9  (SPRAWDŹ i popraw przy każdym filmie)
-// Nowy film = jedna linijka. Klienci z mniej niż 2 filmami trafiają automatycznie do „Inne".
+// format: 'v' = 9:16, 'h' = 16:9
 type Video = { id: string; title: string; client: string; format: 'v' | 'h' };
 
 const videos: Video[] = [
@@ -22,14 +21,14 @@ const videos: Video[] = [
   { id: '1UKcqoH_DqU', title: 'The Da Silva Team - Chester Team Story part 1', client: 'The Da Silva Team', format: 'v' },
   { id: 'zB0XG7CAqos', title: 'The Da Silva Team - Chester Team Story part 2', client: 'The Da Silva Team', format: 'v' },
   { id: '6da5Cz3H4J0', title: 'The Da Silva Team - Merch Jacket Left In Office', client: 'The Da Silva Team', format: 'v' },
-  { id: 'CMjYVNfzfXY', title: 'How to memorize the script?', client: 'Inne', format: 'h' },
+  { id: 'CMjYVNfzfXY', title: 'How to memorize the script?', client: 'Inne', format: 'v' },
   { id: '7ioxndcRB9c', title: 'Radek Haberko - zgadnij dziewczyne', client: 'Radek Haberko', format: 'v' },
   { id: 'apyzux0NUds', title: 'Radek Haberko - lepsza niż tata', client: 'Radek Haberko', format: 'v' },
   { id: 'JR9UqcWzA1M', title: 'Akademia Piękna - jaki zabieg na jaki problem', client: 'Akademia Piękna', format: 'v' },
   { id: 'ZKAaKkM8Pw0', title: 'Akademia Piękna - 3 kwasy', client: 'Akademia Piękna', format: 'v' },
   { id: 'YeDepd26IGQ', title: 'Akademia Piękna - unboxing Clarena', client: 'Akademia Piękna', format: 'v' },
-  { id: 'V6US74MIAKM', title: 'Creators Weekend - event', client: 'Creators Weekend', format: 'h' },
-  { id: '1SjGz7fn7OU', title: 'Konopksyy - Khaby Lame', client: 'Konopksyy', format: 'v' },
+  { id: 'V6US74MIAKM', title: 'Creators Weekend - event', client: 'Creators Weekend', format: 'v' },
+  { id: '1SjGz7fn7OU', title: 'Konopksyy - Khaby Lame', client: 'Konopksyy', format: 'h' },
   { id: 'CsQ24Mc_ipM', title: 'Przemek Pro - Vlog Prawdy', client: 'Przemek Pro', format: 'h' },
 ];
 
