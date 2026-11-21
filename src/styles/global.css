@@ -18,6 +18,7 @@
   --accent-1: #ff6a3d; /* pomarańcz */
   --accent-2: #ff2f83; /* róż */
   --gradient: linear-gradient(120deg, var(--accent-1), var(--accent-2));
+  color-scheme: light;
 
   /* ---- Typografia ---- */
   --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
@@ -35,6 +36,31 @@
   /* ---- Odstępy / layout ---- */
   --content-width: 72rem;
   --space-section: clamp(4rem, 10vw, 8rem);
+}
+
+/* ---- Ciemny motyw ----
+   Kolejność: 1) wybór użytkownika (data-theme ustawiany skryptem w Layout),
+   2) bez JS: ustawienia systemu. */
+:root[data-theme='dark'] {
+  --bg: #12100d;
+  --surface: #1c1915;
+  --ink: #f4f0e8;
+  --ink-soft: #b8b0a1;
+  --ink-faint: #8b8373;
+  --line: #2b2721;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #12100d;
+    --surface: #1c1915;
+    --ink: #f4f0e8;
+    --ink-soft: #b8b0a1;
+    --ink-faint: #8b8373;
+    --line: #2b2721;
+    color-scheme: dark;
+  }
 }
 
 * {
