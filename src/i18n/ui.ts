@@ -74,6 +74,7 @@ export const ui = {
           'Odpowiem w ciągu 24 godzin.',
       cta: 'Napisz do mnie',
     },
+    theme: { label: 'Motyw', light: 'Jasny motyw', dark: 'Ciemny motyw' },
     footer: 'montaż wideo º social media º content creator',
   },
 
@@ -148,6 +149,7 @@ export const ui = {
           "I'll get back to you within 24 hours.",
       cta: 'Get in touch',
     },
+    theme: { label: 'Theme', light: 'Light theme', dark: 'Dark theme' },
     footer: 'video editing º social media º content creator',
   },
 } as const;
